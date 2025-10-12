@@ -311,11 +311,11 @@ body {
                 <ul style="list-style: none; padding: 0; margin: 0;">
                     
                     
-                    <li class="project-highlight" style="color: var(--color-text);">EHS&S Incident Reporting Gen AI Chatbot</li>
-                    
-                    
-                    
                     <li class="project-highlight" style="color: var(--color-text);">Pluggable Multimodal RAG for Secure Knowledge Retrieval</li>
+                    
+                    
+                    
+                    <li class="project-highlight" style="color: var(--color-text);">EHS&S Incident Reporting Gen AI Chatbot</li>
                     
                     
                     
@@ -333,20 +333,26 @@ body {
             <h3 class="section-header">Projects</h3>
             
             <div class="mb-6">
-                <h4 class="text-lg font-semibold mb-2" style="color: var(--color-text);">EHS&S Incident Reporting Gen AI Chatbot - MVP 1</h4>
-                <p class="text-sm mb-3 leading-relaxed" style="color: var(--color-text-secondary);">Developed a GenAI-powered chatbot system to replace traditional form-based data entry for Environmental Health, Safety and Sustainability(EHS&S) incident reporting, reducing data collection rework and licensing costs while improving user engagement through conversational AI interface.</p>
+                <h4 class="text-lg font-semibold mb-2" style="color: var(--color-text);">Pluggable Multimodal RAG for Secure Knowledge Retrieval</h4>
+                <p class="text-sm mb-3 leading-relaxed" style="color: var(--color-text-secondary);">Developed a pluggable Retrieval-Augmented Generation (RAG) framework that avoids costly fine-tuning by leveraging Hugging Face pre-trained models with ChromaDB vector search, laying the foundation for multi-hop reasoning and grounded answers in later phases.</p>
                 
                 <div class="ml-4">
                   
-                    <div class="project-highlight">Engineered RESTful API to process free-text user inputs and deliver summarized, structured responses, enhancing data quality and consistency for downstream processing, achieving <2-second response time per API interaction and ensuring real-time user experience.</div>
+                    <div class="project-highlight">Implemented document ingestion for structured (.csv, .xls, .json) and unstructured (.txt, .md, .pdf, .docx, .pptx) formats using LangChain loaders, ensuring modular support for future plug-ins.</div>
                   
-                    <div class="project-highlight">Leveraged Langchain framework to orchestrate OpenAI-4o LLM integration, enabling intelligent context summarization and natural language understanding from unstructured user inputs, supporting >5,000 Good Saves per month adoption rate through improved user accessibility.</div>
+                    <div class="project-highlight">Built preprocessing pipeline with LangChain Text Splitters (Recursive, Character, Markdown, NLTK, spaCy) to dynamically generate high-quality chunks tailored to file types.</div>
                   
-                    <div class="project-highlight">Implemented Guardrail AI validation pipeline to ensure AI safety through multi-layer content filtering, mitigating risks of hallucinations, bias, and toxic content generation in LLM responses, maintaining <5% data error rate through chatbot-driven validation and quality checks.</div>
+                    <div class="project-highlight">Integrated Hugging Face Embeddings for vectorization and persisted results in ChromaDB, enabling semantic similarity search as the backbone of the RAG loop.</div>
                   
-                    <div class="project-highlight">Developed robust audit system using FastAPI and SQLAlchemy ORM, implementing Pydantic models for type-safe serialization/deserialization of conversation histories, ensuring compliance and traceability requirements while contributing to ~70% reduction in license-related costs by eliminating dependency on traditional form-based systems.</div>
+                    <div class="project-highlight">Designed modular ingestion architecture with caching, loaders, splitters, enrichers, and vector store executors, improving maintainability and scalability.</div>
                   
-                    <div class="project-highlight">Integrated submission API with Internal System to automate Good Save record Draft creation, streamlining SME review and reducing manual data entry overhead, achieving 90% successful API submission rate for seamless data flow to backend systems.</div>
+                    <div class="project-highlight">Exposed ingestion and retrieval workflows via FastAPI endpoints, routed through an API Gateway with service-specific APIs (SQL metadata API, content API, and GenAI query API).</div>
+                  
+                    <div class="project-highlight">Implemented query handling pipeline: Retriever → PromptTemplate → Hugging Face LLM (ChatHuggingFace) → StrOutputParser, enforcing concise, grounded answers strictly from retrieved context.</div>
+                  
+                    <div class="project-highlight">Improved retrieval reliability and reduced implementation risk by adopting pre-trained Hugging Face models with vector search instead of costly fine-tuning, enabling incremental upgrades in later phases.</div>
+                  
+                    <div class="project-highlight">Established secure, team-specific retrieval boundaries by embedding ownership metadata, preventing cross-team data exposure while improving knowledge accessibility.</div>
                   
                 </div>
                 
@@ -371,26 +377,20 @@ body {
             </div>
             
             <div class="mb-6">
-                <h4 class="text-lg font-semibold mb-2" style="color: var(--color-text);">Pluggable Multimodal RAG for Secure Knowledge Retrieval</h4>
-                <p class="text-sm mb-3 leading-relaxed" style="color: var(--color-text-secondary);">Developed a pluggable Retrieval-Augmented Generation (RAG) framework that avoids costly fine-tuning by leveraging Hugging Face pre-trained models with ChromaDB vector search, laying the foundation for multi-hop reasoning and grounded answers in later phases.</p>
+                <h4 class="text-lg font-semibold mb-2" style="color: var(--color-text);">EHS&S Incident Reporting Gen AI Chatbot - MVP 1</h4>
+                <p class="text-sm mb-3 leading-relaxed" style="color: var(--color-text-secondary);">Developed a GenAI-powered chatbot system to replace traditional form-based data entry for Environmental Health, Safety and Sustainability(EHS&S) incident reporting, reducing data collection rework and licensing costs while improving user engagement through conversational AI interface.</p>
                 
                 <div class="ml-4">
                   
-                    <div class="project-highlight">Implemented document ingestion for structured (.csv, .xls, .json) and unstructured (.txt, .md, .pdf, .docx, .pptx) formats using **LangChain loaders**, ensuring modular support for future plug-ins.</div>
+                    <div class="project-highlight">Engineered RESTful API to process free-text user inputs and deliver summarized, structured responses, enhancing data quality and consistency for downstream processing, achieving <2-second response time per API interaction and ensuring real-time user experience.</div>
                   
-                    <div class="project-highlight">Built preprocessing pipeline with **LangChain Text Splitters** (Recursive, Character, Markdown, NLTK, spaCy) to dynamically generate high-quality chunks tailored to file types.</div>
+                    <div class="project-highlight">Leveraged Langchain framework to orchestrate OpenAI-4o LLM integration, enabling intelligent context summarization and natural language understanding from unstructured user inputs, supporting >5,000 Good Saves per month adoption rate through improved user accessibility.</div>
                   
-                    <div class="project-highlight">Integrated **Hugging Face Embeddings** for vectorization and persisted results in **ChromaDB**, enabling semantic similarity search as the backbone of the RAG loop.</div>
+                    <div class="project-highlight">Implemented Guardrail AI validation pipeline to ensure AI safety through multi-layer content filtering, mitigating risks of hallucinations, bias, and toxic content generation in LLM responses, maintaining <5% data error rate through chatbot-driven validation and quality checks.</div>
                   
-                    <div class="project-highlight">Designed modular ingestion architecture with caching, loaders, splitters, enrichers, and vector store executors, improving maintainability and scalability.</div>
+                    <div class="project-highlight">Developed robust audit system using FastAPI and SQLAlchemy ORM, implementing Pydantic models for type-safe serialization/deserialization of conversation histories, ensuring compliance and traceability requirements while contributing to ~70% reduction in license-related costs by eliminating dependency on traditional form-based systems.</div>
                   
-                    <div class="project-highlight">Exposed ingestion and retrieval workflows via **FastAPI** endpoints, routed through an API Gateway with service-specific APIs (SQL metadata API, content API, and GenAI query API).</div>
-                  
-                    <div class="project-highlight">Implemented query handling pipeline: **Retriever → PromptTemplate → Hugging Face LLM (ChatHuggingFace) → StrOutputParser**, enforcing concise, grounded answers strictly from retrieved context.</div>
-                  
-                    <div class="project-highlight">Improved retrieval reliability and reduced implementation risk by adopting pre-trained **Hugging Face models** with vector search instead of costly fine-tuning, enabling incremental upgrades in later phases.</div>
-                  
-                    <div class="project-highlight">Established secure, team-specific retrieval boundaries by embedding ownership metadata, preventing cross-team data exposure while improving knowledge accessibility.</div>
+                    <div class="project-highlight">Integrated submission API with Internal System to automate Good Save record Draft creation, streamlining SME review and reducing manual data entry overhead, achieving 90% successful API submission rate for seamless data flow to backend systems.</div>
                   
                 </div>
                 
@@ -398,25 +398,25 @@ body {
             
             <div class="mb-6">
                 <h4 class="text-lg font-semibold mb-2" style="color: var(--color-text);">API Development and Integration using FastAPI, SQLAlchemy, and OAuth 2.0</h4>
-                <p class="text-sm mb-3 leading-relaxed" style="color: var(--color-text-secondary);">Designed and implemented a **secure, high-performance REST API** using **FastAPI** for document retrieval and delivery, leveraging **SQLAlchemy ORM** for database operations, **Pydantic** for data validation, and **OAuth 2.0** for authentication. Deployed the solution on **IIS** with robust logging and auditing mechanisms.</p>
+                <p class="text-sm mb-3 leading-relaxed" style="color: var(--color-text-secondary);">Designed and implemented a secure, high-performance REST API using FastAPI for document retrieval and delivery, leveraging SQLAlchemy ORM for database operations, Pydantic for data validation, and OAuth 2.0 for authentication. Deployed the solution on IIS with robust logging and auditing mechanisms.</p>
                 
                 <div class="ml-4">
                   
                     <div class="project-highlight">Developed REST API endpoints using FastAPI to enable secure and efficient document retrieval and delivery.</div>
                   
-                    <div class="project-highlight">Implemented **OAuth 2.0 authentication** with **60-minute token validity** for secure API access.</div>
+                    <div class="project-highlight">Implemented OAuth 2.0 authentication with 60-minute token validity for secure API access.</div>
                   
-                    <div class="project-highlight">Utilized **SQLAlchemy ORM** for database interactions, improving maintainability, reducing boilerplate SQL, and enabling **database-agnostic** operations.</div>
+                    <div class="project-highlight">Utilized SQLAlchemy ORM for database interactions, improving maintainability, reducing boilerplate SQL, and enabling database-agnostic operations.</div>
                   
-                    <div class="project-highlight">Applied **Pydantic models** for request and response validation, ensuring **data integrity** and **type safety**.</div>
+                    <div class="project-highlight">Applied Pydantic models for request and response validation, ensuring data integrity and type safety.</div>
                   
-                    <div class="project-highlight">Configured **API hosting on IIS** for **enterprise-grade deployment** and **scalability**.</div>
+                    <div class="project-highlight">Configured API hosting on IIS for enterprise-grade deployment and scalability.</div>
                   
-                    <div class="project-highlight">Designed and implemented a **structured logging system** using **Python's logging module** with `TimedRotatingFileHandler`, capturing request/response details, status codes, and error traces for **audit and troubleshooting**.</div>
+                    <div class="project-highlight">Designed and implemented a structured logging system using Python's logging module with `TimedRotatingFileHandler`, capturing request/response details, status codes, and error traces for audit and troubleshooting.</div>
                   
-                    <div class="project-highlight">Created **YAML-based logging configuration** for modular and maintainable log management, including log rotation and multi-level loggers for API, DB, and utility modules.</div>
+                    <div class="project-highlight">Created YAML-based logging configuration for modular and maintainable log management, including log rotation and multi-level loggers for API, DB, and utility modules.</div>
                   
-                    <div class="project-highlight">Implemented **error handling** and **response standardization** with appropriate **HTTP status codes** for robust client-server communication.</div>
+                    <div class="project-highlight">Implemented error handling and response standardization with appropriate HTTP status codes for robust client-server communication.</div>
                   
                 </div>
                 
@@ -497,7 +497,7 @@ body {
                         <p class="text-base" style="color: var(--color-primary);">Silicon Institute of Technology</p>
                         <p class="text-sm" style="color: var(--color-text-secondary);">Score: 8.85</p>
                     </div>
-                    <span class="text-sm font-medium mt-1 md:mt-0" style="color: var(--color-text-secondary);">Graduated 2020-07-31</span>
+                    <span class="text-sm font-medium mt-1 md:mt-0" style="color: var(--color-text-secondary);">Graduated 2020-08-13</span>
                 </div>
                 
                 <div class="mt-3">
