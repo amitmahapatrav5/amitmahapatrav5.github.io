@@ -1,0 +1,219 @@
+basics:
+  name: Amit Kumar Mahapatra
+  label: Generative AI Engineer
+  image: ""
+  email: mahapatraarhas200@gmail.com
+  phone: "8114362199"
+  url: ""
+  summary: >
+    Python • RAG • Agentic AI • Machine Learning • Deep Learning • API Backend
+  location:
+    address: Patia
+    postalCode: "751024"
+    city: Bhubaneswar
+    countryCode: IN
+    region: Odisha
+  profiles:
+    - network: LinkedIn
+      username: amitmahapatrav5
+      url: https://www.linkedin.com/in/amitmahapatrav5/
+    - network: GitHub
+      username: amitmahapatrav5
+      url: https://github.com/amitmahapatrav5
+
+work:
+  - name: Tata Consultancy Services
+    position: IT Analyst
+    url: https://www.tcs.com/
+    startDate: 2020-10-08
+    endDate: Present
+    summary: Generative AI Engineer
+    highlights:
+      - Gen AI Delta Identification and SOP Generation Workflow - MVP 1&2
+      - EHS&S Incident Reporting Gen AI Chatbot - POC
+      - TVV CDL Integration API Backend
+      - Forms Management API Backend
+
+volunteer:
+  - organization: ""
+    position: ""
+    url: ""
+    startDate: ""
+    endDate: ""
+    summary: ""
+    highlights:
+      - ""
+
+education:
+  - institution: Silicon Institute of Technology
+    url: https://silicon.ac.in/
+    area: Bhubaneswar, Odisha, India
+    studyType: Bachelor of Technology
+    startDate: 2016-08-13
+    endDate: 2020-08-13
+    score: "8.85"
+    courses:
+      - Data Structure
+      - Algorithm
+      - Machine Learning
+      - Deep Learning
+      - Natural Language Processing
+
+awards:
+  - title: ""
+    date: ""
+    awarder: ""
+    summary: ""
+
+certificates:
+  - name: ""
+    date: ""
+    issuer: ""
+    url: ""
+
+publications:
+  - name: ""
+    publisher: ""
+    releaseDate: ""
+    url: ""
+    summary: ""
+
+skills:
+  - name: Generative AI
+    level: Advanced
+    keywords:
+      - Python
+      - LangChain
+      - Unstructured
+      - Qdrant
+      - DSPy
+      - trustCall
+      - Huggingface Transformers
+  - name: Agentic AI
+    level: Advanced
+    keywords:
+      - Python
+      - Agentic Chatbot
+      - Multi Agent System
+      - LangGraph
+      - LangSmith
+      - LangFuse
+      - MCP
+      - A2A
+  - name: Backend Engineering
+    level: Advanced
+    keywords:
+      - Python
+      - FastAPI
+      - SQLAlchemy
+      - PostgreSQL
+      - Redis
+      - Docker
+      - OAuth 2.0
+      - Azure AD SSO
+      - OpenTelemetry
+  - name: Cloud
+    level: Intermediate
+    keywords:
+      - AWS
+      - Lambda
+      - S3
+      - EKS
+
+languages:
+  - language: English
+    fluency: Professional Working Proficiency
+  - language: Odia
+    fluency: Native speaker
+
+interests:
+  - name: ""
+    keywords:
+      - ""
+
+references:
+  - name: ""
+    reference: ""
+
+projects:
+  - name: Gen AI Delta Identification and SOP Generation Workflow - MVP 1&2
+    startDate: 2024-01-01
+    endDate: ""
+    skills:
+      - Unstructured
+      - Qdrant
+      - Valkey
+      - LangChain
+      - LangGraph
+      - LangSmith
+      - Azure OpenAI
+      - FastAPI
+      - PostgreSQL
+      - Azure AD SSO
+      - AWS Lambda
+      - EKS
+      - Git
+      - Docker
+    highlights:
+      - Developed a workflow for generating SOPs using Generative AI
+    url: ""
+  - name: EHS&S Incident Reporting Gen AI Chatbot - POC
+    startDate: 2022-08-01
+    endDate: 2022-12-31
+    skills:
+      - LangChain
+      - LangGraph
+      - ChromaDB
+      - Ollama
+      - FastAPI
+      - PostgreSQL
+    highlights:
+      - ""
+    url: ""
+  - name: TVV CDL Integration API Backend
+    startDate: 2021-08-01
+    endDate: 2022-08-01
+    skills:
+      - Python
+      - FastAPI
+      - Pydantic
+      - SQLAlchemy
+      - Microsoft SQL Server
+      - Redis
+      - Git
+      - Docker
+    highlights: 
+      - ""
+    url: ""
+  - name: Forms Management API Backend
+    startDate: 2020-08-01
+    endDate: 2021-08-01
+    skills:
+      - Python
+      - FastAPI
+      - Pydantic
+      - SQLAlchemy
+      - PostgreSQL
+      - OAuth2
+      - Git
+      - Docker
+    highlights: 
+      - ""
+    url: ""
+  
+  # - name: QTE Agentic AI Chatbot
+  #   startDate: ""
+  #   endDate: ""
+  #   skills: 
+  #     - Autogen
+  #     - Azure AI Search
+  #   highlights: 
+  #     - Developed an agentic chatbot for product owners to generate Userstory
+  #   url: ""
+
+  # - name: Unified Data Platform - Gen AI Search
+  #   startDate: ""
+  #   endDate: ""
+  #   description: ""
+  #   highlights: []
+  #   url: ""
