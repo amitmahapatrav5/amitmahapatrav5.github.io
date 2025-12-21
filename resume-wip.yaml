@@ -20,7 +20,7 @@ basics:
       username: amitmahapatrav5
       url: https://github.com/amitmahapatrav5
 
-work:
+experience: # work -> experience
   - name: Tata Consultancy Services
     position: IT Analyst
     url: https://www.tcs.com/
@@ -28,55 +28,11 @@ work:
     endDate: Present
     summary: Generative AI Engineer
     highlights:
-      - Gen AI Delta Identification and SOP Generation Workflow Chatbot - MVP 1&2
+      - Gen AI Delta Identification and SOP Generation Workflow Chatbot
       - Gen AI Delta Identification Workflow Chatbot - POC
-      - EHS&S Incident Reporting Gen AI Chatbot - POC
+      - Gen AI EHS&S Incident Reporting Chatbot
       - Cross-Platform Data Integration Backend
       - Forms Management API Backend
-
-volunteer:
-  - organization: ""
-    position: ""
-    url: ""
-    startDate: ""
-    endDate: ""
-    summary: ""
-    highlights:
-      - ""
-
-education:
-  - institution: Silicon Institute of Technology
-    url: https://silicon.ac.in/
-    area: Bhubaneswar, Odisha, India
-    studyType: Bachelor of Technology
-    startDate: 2016-08-13
-    endDate: 2020-08-13
-    score: "8.85"
-    courses:
-      - Data Structure
-      - Algorithm
-      - Machine Learning
-      - Deep Learning
-      - Natural Language Processing
-
-awards:
-  - title: ""
-    date: ""
-    awarder: ""
-    summary: ""
-
-certificates:
-  - name: ""
-    date: ""
-    issuer: ""
-    url: ""
-
-publications:
-  - name: ""
-    publisher: ""
-    releaseDate: ""
-    url: ""
-    summary: ""
 
 skills:
   - name: Generative AI
@@ -122,23 +78,8 @@ skills:
   #     - S3
   #     - EKS
 
-languages:
-  - language: English
-    fluency: Professional Working Proficiency
-  - language: Odia
-    fluency: Native speaker
-
-interests:
-  - name: ""
-    keywords:
-      - ""
-
-references:
-  - name: ""
-    reference: ""
-
 projects:
-  - name: Gen AI Delta Identification and SOP Generation Workflow Chatbot - MVP 1&2
+  - name: Gen AI Delta Identification and SOP Generation Workflow Chatbot
     startDate: 2024-01-01
     endDate: ""
     skills:
@@ -156,10 +97,12 @@ projects:
       # - EKS
     highlights:
       - ""
+      - ""
+      - ""
     url: ""
   - name: Gen AI Delta Identification Workflow Chatbot - POC
-    startDate: 2022-10-01
-    endDate: 2022-12-31
+    startDate: 2023-12-01
+    endDate: 2023-12-31
     skills:
       - Unstructured
       - Qdrant
@@ -169,38 +112,47 @@ projects:
       - FastAPI
     highlights:
       - ""
-    url: ""
-  - name: EHS&S Incident Reporting Gen AI Chatbot - POC
-    startDate: 2022-08-01
-    endDate: 2022-09-30
-    skills:
-      - LangChain
-      - LangGraph
-      - ChromaDB
-      - Ollama
-      - FastAPI
-    highlights:
+      - ""
       - ""
     url: ""
+  - name: Gen AI EHS&S Incident Reporting Chatbot
+    startDate: 2022-09-01
+    endDate: 2023-11-30
+    skills:
+      - Azure OpenAI
+      - Guardrails AI
+      - LangChain
+      - LangGraph
+      - Qdrant
+      - FastAPI
+      - Pydantic
+      - Azure AD SSO
+      - LangSmith
+    highlights:
+      - "This poc aimed to replace inefficient, error-prone, form-based EHS incident reporting with a GenAI-driven conversational interface to reduce data rework, improve adoption, and lower SaaS licensing costs while scaling access to all employees and contractors."
+      - "Designed and developed the backend using Azure OpenAI with LangChain and LangGraph to orchestrate conversational workflows; implemented robust Guardrails AI for input/output validation (hallucination, bias, toxicity), Qdrant for vector-based retrieval and validation, and FastAPI with Pydantic for secure, high-performance REST services; integrated Azure AD SSO for authentication, enabled end-to-end observability and tracing with LangSmith, and ensured reliable, scalable record creation through asynchronous API integrations."
+      - "Achieved target scale of >5000 Good Saves/month, enabled ~70% reduction in license costs, reduced data errors to <5%, and delivered 90% successful API submissions with <2-second response time, significantly improving user experience, data quality, and operational efficiency."
+    url: ""
   - name: Cross-Platform Data Integration Backend
-    startDate: 2021-08-01
-    endDate: 2022-08-01
+    startDate: 2021-09-01
+    endDate: 2022-08-31
     skills:
       - Python
       - FastAPI
       - Pydantic
       - SQLAlchemy
       - Microsoft SQL Server
-      - Valkey
       - OAuth 2.0
       - OpenTelemetry
       - Docker
     highlights: 
-      - ""
+      - "This project aimed to design a secure and scalable backend integration to enable near real-time document synchronization between enterprise systems, eliminating manual retrieval while ensuring reliability, auditability, and regulatory compliance."
+      - "Designed and developed a REST-based asynchronous backend API using Python and FastAPI, with Pydantic and SQLAlchemy for data validation and persistence on Microsoft SQL Server; implemented OAuth 2.0 for secure authentication, containerized the service using Docker for consistent deployments, and integrated OpenTelemetry to enable distributed tracing, performance monitoring, and observability across high-throughput workflows."
+      - "Enabled automated synchronization on a scheduled basis, achieved 50 GB data transfer within ~8 minutes during load testing, supported asynchronous file delivery with no size limits, ensured 100% traceability via audit logs and request identifiers, and improved operational reliability through standardized error handling and real-time performance insights."
     url: ""
   - name: Forms Management API Backend
     startDate: 2020-08-01
-    endDate: 2021-08-01
+    endDate: 2021-08-31
     skills:
       - Python
       - FastAPI
@@ -209,6 +161,8 @@ projects:
       - PostgreSQL
       - Azure AD SSO
     highlights: 
+      - ""
+      - ""
       - ""
     url: ""
   
@@ -228,3 +182,62 @@ projects:
   #   description: ""
   #   highlights: []
   #   url: ""
+
+education:
+  - institution: Silicon Institute of Technology
+    url: https://silicon.ac.in/
+    area: Bhubaneswar, Odisha, India
+    studyType: Bachelor of Technology
+    startDate: 2016-08-13
+    endDate: 2020-08-13
+    score: "8.85"
+    courses:
+      - Data Structure
+      - Algorithm
+      - Machine Learning
+      - Deep Learning
+      - Natural Language Processing
+
+certificates:
+  - name: ""
+    date: ""
+    issuer: ""
+    url: ""
+
+awards:
+  - title: ""
+    date: ""
+    awarder: ""
+    summary: ""
+
+volunteer:
+  - organization: ""
+    position: ""
+    url: ""
+    startDate: ""
+    endDate: ""
+    summary: ""
+    highlights:
+      - ""
+
+publications:
+  - name: ""
+    publisher: ""
+    releaseDate: ""
+    url: ""
+    summary: ""
+
+languages:
+  - language: English
+    fluency: Professional Working Proficiency
+  - language: Odia
+    fluency: Native speaker
+
+interests:
+  - name: ""
+    keywords:
+      - ""
+
+references:
+  - name: ""
+    reference: ""
