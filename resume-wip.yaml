@@ -5,8 +5,7 @@ basics:
   email: mahapatraarhas200@gmail.com
   phone: "8114362199"
   url: ""
-  summary: >
-    Python • RAG • Agentic AI • Machine Learning • Deep Learning • API Backend
+  summary: Python • RAG • Agentic AI • Machine Learning • Deep Learning • API Backend
   location:
     address: Patia
     postalCode: "751024"
@@ -29,9 +28,10 @@ work:
     endDate: Present
     summary: Generative AI Engineer
     highlights:
-      - Gen AI Delta Identification and SOP Generation Workflow - MVP 1&2
+      - Gen AI Delta Identification and SOP Generation Workflow Chatbot - MVP 1&2
+      - Gen AI Delta Identification Workflow Chatbot - POC
       - EHS&S Incident Reporting Gen AI Chatbot - POC
-      - TVV CDL Integration API Backend
+      - Cross-Platform Data Integration Backend
       - Forms Management API Backend
 
 volunteer:
@@ -83,42 +83,44 @@ skills:
     level: Advanced
     keywords:
       - Python
+      - Azure OpenAI
       - LangChain
       - Unstructured
       - Qdrant
       - DSPy
       - trustCall
-      - Huggingface Transformers
+      - Huggingface Transformer Models
   - name: Agentic AI
     level: Advanced
     keywords:
       - Python
-      - Agentic Chatbot
-      - Multi Agent System
       - LangGraph
       - LangSmith
-      - LangFuse
+      # - Microsoft Agenntic Framework
+      # - LangFuse
       - MCP
-      - A2A
+      # - A2A
   - name: Backend Engineering
     level: Advanced
     keywords:
       - Python
       - FastAPI
+      - Pydantic
       - SQLAlchemy
       - PostgreSQL
-      - Redis
+      - Microsoft SQL Server
+      - Valkey
       - Docker
       - OAuth 2.0
       - Azure AD SSO
       - OpenTelemetry
-  - name: Cloud
-    level: Intermediate
-    keywords:
-      - AWS
-      - Lambda
-      - S3
-      - EKS
+  # - name: Cloud
+  #   level: Intermediate
+  #   keywords:
+  #     - AWS
+  #     - Lambda
+  #     - S3
+  #     - EKS
 
 languages:
   - language: English
@@ -136,41 +138,51 @@ references:
     reference: ""
 
 projects:
-  - name: Gen AI Delta Identification and SOP Generation Workflow - MVP 1&2
+  - name: Gen AI Delta Identification and SOP Generation Workflow Chatbot - MVP 1&2
     startDate: 2024-01-01
     endDate: ""
     skills:
       - Unstructured
-      - Qdrant
-      - Valkey
+      - Azure OpenAI
       - LangChain
       - LangGraph
-      - LangSmith
-      - Azure OpenAI
+      - Qdrant
+      - Valkey
       - FastAPI
       - PostgreSQL
       - Azure AD SSO
       - AWS Lambda
-      - EKS
-      - Git
-      - Docker
+      - LangSmith
+      # - EKS
     highlights:
-      - Developed a workflow for generating SOPs using Generative AI
+      - ""
+    url: ""
+  - name: Gen AI Delta Identification Workflow Chatbot - POC
+    startDate: 2022-10-01
+    endDate: 2022-12-31
+    skills:
+      - Unstructured
+      - Qdrant
+      - LangChain
+      - LangGraph
+      - Ollama
+      - FastAPI
+    highlights:
+      - ""
     url: ""
   - name: EHS&S Incident Reporting Gen AI Chatbot - POC
     startDate: 2022-08-01
-    endDate: 2022-12-31
+    endDate: 2022-09-30
     skills:
       - LangChain
       - LangGraph
       - ChromaDB
       - Ollama
       - FastAPI
-      - PostgreSQL
     highlights:
       - ""
     url: ""
-  - name: TVV CDL Integration API Backend
+  - name: Cross-Platform Data Integration Backend
     startDate: 2021-08-01
     endDate: 2022-08-01
     skills:
@@ -179,8 +191,9 @@ projects:
       - Pydantic
       - SQLAlchemy
       - Microsoft SQL Server
-      - Redis
-      - Git
+      - Valkey
+      - OAuth 2.0
+      - OpenTelemetry
       - Docker
     highlights: 
       - ""
@@ -194,9 +207,7 @@ projects:
       - Pydantic
       - SQLAlchemy
       - PostgreSQL
-      - OAuth2
-      - Git
-      - Docker
+      - Azure AD SSO
     highlights: 
       - ""
     url: ""
