@@ -29,7 +29,7 @@ experience: # work -> experience
     summary: Generative AI Engineer
     highlights:
       - Gen AI Delta Identification and SOP Generation Workflow Chatbot
-      - Gen AI Delta Identification Workflow Chatbot - POC
+      - Gen AI Delta Identification Workflow - POC
       - Gen AI EHS&S Incident Reporting Chatbot
       - Cross-Platform Data Integration Backend
       - Forms Management API Backend
@@ -73,7 +73,6 @@ skills:
   # - name: Cloud
   #   level: Intermediate
   #   keywords:
-  #     - AWS
   #     - Lambda
   #     - S3
   #     - EKS
@@ -96,11 +95,11 @@ projects:
       - LangSmith
       # - EKS
     highlights:
-      - ""
-      - ""
-      - ""
+      - "This project aimed to transform a manual, error-prone SOP comparison and update process into an interactive, GenAI-powered chatbot workflow that identifies semantic deltas, incorporates human validation, and generates updated documents end-to-end."
+      - "Designed and developed a scalable chatbot-based backend architecture using FastAPI, LangChain, and LangGraph to manage multi-step GenAI workflows; used Unstructured for document parsing, Azure OpenAI for high-quality reasoning and generation, Qdrant for semantic retrieval, Valkey for state and session management, and PostgreSQL for persistence; integrated Azure AD SSO for secure access, AWS Lambda for event-driven processing, and LangSmith for tracing, observability, and prompt-level debugging."
+      - "Enabled automated delta identification, human-in-the-loop validation, and final document generation within a single conversational workflow, significantly reducing manual analysis effort, improving consistency of SOP updates, and accelerating document turnaround time while maintaining user control and auditability."
     url: ""
-  - name: Gen AI Delta Identification Workflow Chatbot - POC
+  - name: Gen AI Delta Identification Workflow - POC
     startDate: 2023-12-01
     endDate: 2023-12-31
     skills:
@@ -111,9 +110,9 @@ projects:
       - Ollama
       - FastAPI
     highlights:
-      - ""
-      - ""
-      - ""
+      - "This project aimed to validate whether Generative AI could accurately identify semantic deltas between two PDF documents, reducing the manual effort required to compare large SOP-style documents section by section."
+      - "Built a backend-driven POC using FastAPI to orchestrate document ingestion and comparison; leveraged Unstructured for parsing PDFs, LangChain and LangGraph for workflow orchestration, Qdrant for vector-based semantic comparison, and Ollama for local LLM inference to identify section-wise semantic differences between documents."
+      - "Successfully demonstrated reliable AI-driven delta identification between two documents, proving feasibility of semantic comparison workflows and providing the technical foundation to scale the solution into a production-grade, human-in-the-loop system."
     url: ""
   - name: Gen AI EHS&S Incident Reporting Chatbot
     startDate: 2022-09-01
@@ -190,7 +189,7 @@ education:
     studyType: Bachelor of Technology
     startDate: 2016-08-13
     endDate: 2020-08-13
-    score: "8.85"
+    score: "8.61"
     courses:
       - Data Structure
       - Algorithm
