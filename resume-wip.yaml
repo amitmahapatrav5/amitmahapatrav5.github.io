@@ -78,6 +78,24 @@ skills:
   #     - EKS
 
 projects:
+  # - name: Gen AI Advanced Semantic Search
+  #   startDate: 2024-01-01
+  #   endDate: ""
+  #   skills:
+  #     - Unstructured
+  #     - Azure OpenAI
+  #     - LangChain
+  #     - Qdrant
+  #     - Valkey
+  #     - FastAPI
+  #     - PostgreSQL
+  #     - AWS Lambda
+  #     - AWS S3
+  #     - LangSmith
+  #   highlights:
+  #     - ""
+  #     - ""
+  #     - ""
   - name: Gen AI Delta Identification and SOP Generation Workflow Chatbot
     startDate: 2024-01-01
     endDate: ""
@@ -160,35 +178,18 @@ projects:
       - PostgreSQL
       - Azure AD SSO
     highlights: 
-      - ""
-      - ""
-      - ""
+      - "This project aimed to centralize and modernize the management of 10,000+ banking forms by replacing fragmented, manual processes with a secure backend system capable of handling complex metadata, role-based access, and compliance-driven audit requirements."
+      - "Designed and developed a FastAPI-based backend using Python, with Pydantic for schema validation and SQLAlchemy for ORM-based persistence on PostgreSQL; implemented role-based access control (Admin, Owner, User) with Azure AD SSO, managed dynamic dropdown/master data through database-driven configurations, maintained detailed audit trails for all form lifecycle changes, and instrumented the service with OpenTelemetry for monitoring, tracing, and performance analysis."
+      - "Enabled scalable management of 10k+ forms with rich metadata and lifecycle tracking, improved governance and compliance through full auditability and role-based controls, reduced operational overhead via centralized master data management, and enhanced system reliability and observability through real-time monitoring and traceability."
     url: ""
-  
-  # - name: QTE Agentic AI Chatbot
-  #   startDate: ""
-  #   endDate: ""
-  #   skills: 
-  #     - Autogen
-  #     - Azure AI Search
-  #   highlights: 
-  #     - Developed an agentic chatbot for product owners to generate Userstory
-  #   url: ""
-
-  # - name: Unified Data Platform - Gen AI Search
-  #   startDate: ""
-  #   endDate: ""
-  #   description: ""
-  #   highlights: []
-  #   url: ""
 
 education:
   - institution: Silicon Institute of Technology
     url: https://silicon.ac.in/
     area: Bhubaneswar, Odisha, India
     studyType: Bachelor of Technology
-    startDate: 2016-08-13
-    endDate: 2020-08-13
+    startDate: 2016-07-01
+    endDate: 2020-07-31
     score: "8.61"
     courses:
       - Data Structure
@@ -196,6 +197,20 @@ education:
       - Machine Learning
       - Deep Learning
       - Natural Language Processing
+  - institution: Biswa Bharati +2 Science Residential College 
+    url: 
+    area: Balasore, Odisha, India
+    studyType: Higher Secondary
+    startDate: 2013-06-01
+    endDate: 2015-06-01
+    score: "75.34%"
+  - institution: Sri Aurobindo Centre of Integral High School
+    url: 
+    area: Balasore, Odisha, India
+    studyType: Secondary
+    startDate: 2003-10-05
+    endDate: 2013-10-05
+    score: "87.5"
 
 certificates:
   - name: ""
