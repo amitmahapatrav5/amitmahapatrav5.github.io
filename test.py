@@ -4,10 +4,7 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 
-def render(json_file, template_file, output_file):
-    json_file = Path(json_file)
-    template_file = Path(template_file)
-    output_file = Path(output_file)
+def render(json_file: Path, template_file: Path, output_file: Path):
     data = {}
     with json_file.open() as f:
         data = safe_load(f)
@@ -29,6 +26,6 @@ if __name__ == "__main__":
     html_output_file = Path().cwd() / 'index.html'
     render(json_file, html_template_file, html_output_file)
 
-    pdf_template_file = Path().cwd() / 'pdf_template.html'
+    pdf_template_file = Path().cwd() / 'pdf_template_wip.html'
     pdf_output_file = Path().cwd() / 'resume.pdf.html'
     render(json_file, pdf_template_file, pdf_output_file)
