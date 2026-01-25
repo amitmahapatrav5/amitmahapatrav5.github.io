@@ -115,7 +115,8 @@
     /* Section Wrapper */
     .section-wrapper {
       max-width: 700px;
-      margin: 0 auto 18px;
+      /* margin: 0 auto 18px; */
+      margin: 18px auto 18px;
     }
 
     .section-wrapper h2 {
@@ -226,21 +227,35 @@
       line-height: 10px;
     }
 
-    /* Skills Section */
     .skill-row {
-      margin-bottom: 5px;
-      display: flex;
-      align-items: baseline;
+      margin-bottom: 6px;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      column-gap: 14px;
+      align-items: start;
+
+      page-break-inside: avoid;
+      break-inside: avoid;
     }
 
     .skill-name {
       font-weight: 600;
       font-size: 1.4rem;
+      white-space: nowrap;
+    }
+
+    .skill-level {
+      font-style: italic;
+      font-weight: normal;
+    }
+
+    .skill-name>div+div {
+      margin-top: 5px;
     }
 
     .skill-value {
       font-size: 1.4rem;
-      margin-left: 5px;
+      line-height: 1.5rem;
     }
 
     /* References */
@@ -254,14 +269,6 @@
       font-size: 1.4rem;
       line-height: 1.5rem;
     }
-
-
-
-
-
-
-
-
 
     /* ============================================
    PAGE BREAK RULES FOR PDF GENERATION
@@ -399,6 +406,7 @@
      SECTION LEVEL CONTROLS
      ========================================== */
 
+      /* Force consistent spacing between all sections in print */
       /* Allow breaks between different sections */
       .section-wrapper+.section-wrapper {
         page-break-before: auto;
@@ -484,10 +492,8 @@
     /* End of Page Break Rules */
   </style>
 
-
-
-
   <div class="resume-container">
+
     <div class="section-wrapper">
       <div class="section-content">
         <div class="header-name">Amit Kumar Mahapatra</div>
@@ -524,36 +530,48 @@
             </div>
             
             
+
+
             
             <div class="contact-item">
+              
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em"
+                width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
+                </path>
+              </svg>
+              
+              <a href="https://www.linkedin.com/in/amitmahapatrav5/">amitmahapatrav5</a>
+            </div>
+            
+            <div class="contact-item">
+              
               <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em"
                 width="1em" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
                 </path>
-              </svg><a href="https://www.linkedin.com/in/amitmahapatrav5/">amitmahapatrav5</a>
+              </svg>
+              
+              <a href="https://github.com/amitmahapatrav5">amitmahapatrav5</a>
             </div>
             
-            <div class="contact-item">
-              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em"
-                width="1em" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
-                </path>
-              </svg><a href="https://github.com/amitmahapatrav5">amitmahapatrav5</a>
-            </div>
-            
+
+
+
+
+
           </div>
         </div>
       </div>
     </div>
-
     
     <div class="section-wrapper">
       <div class="section-content">
         <div class="secondary">
           <div class="summary-text">
-            <p>Generative AI • RAG • LangChain • Agentic AI • LangGraph • MCP • Traditional AI • Deep Learning • PyTorch • Backend • Python • FastAPI • Frontend • React • TypeScript</p>
+            <p>Python • RAG • Agentic AI • Machine Learning • Deep Learning • API Backend</p>
           </div>
         </div>
       </div>
@@ -572,25 +590,336 @@
               <div class="position-title">IT Analyst</div>
               <div class="secondary">
                 <div class="date-range">
-                  <div class="date-text">2020-10-08</div> — <div class="date-text">Present</div>
+                  <div class="date-text">2020-10-08</div>
+                  —
+                  <div class="date-text">
+                    Present
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="company-name">Tata Consultancy Services</div>
+
+            <div class="company-name">
+              
+              <a href="https://www.tcs.com/" target="_blank">
+                Tata Consultancy Services, Bhubaneswar, Odisha, India
+              </a>
+              
+            </div>
+
+
             <div class="secondary">
+
               
               <div class="work-summary">
-                <p>Generative AI Engineer</p>
+                <p>Generative AI Backend Engineer</p>
               </div>
               
+
               
               <ul class="highlights-list">
                 
-                <li>Pluggable Multimodal RAG for Secure Knowledge Retrieval</li>
+                <li>
+                  
+                  Gen AI Delta Identification and SOP Generation Workflow Chatbot
+                  
+                </li>
                 
-                <li>EHS&amp;S Incident Reporting Gen AI Chatbot</li>
+                <li>
+                  
+                  Gen AI Delta Identification Workflow - POC
+                  
+                </li>
                 
-                <li>API Development and Integration using FastAPI, SQLAlchemy, and OAuth 2.0</li>
+                <li>
+                  
+                  Gen AI EHS&amp;S Incident Reporting Chatbot
+                  
+                </li>
+                
+                <li>
+                  
+                  Cross-Platform Data Integration Backend
+                  
+                </li>
+                
+                <li>
+                  
+                  Forms Management API Backend
+                  
+                </li>
+                
+              </ul>
+              
+
+
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+
+
+    
+    <div>
+      <div class="section-wrapper">
+        <h2>Skills</h2>
+        <hr />
+        <div class="section-content">
+          
+          <div class="skill-row">
+            <div class="skill-name">
+              <div>Generative AI</div>
+              <div>
+                
+                <span class="skill-level">(Advanced)</span>
+                
+              </div>
+            </div>
+            <div class="skill-value">
+              <div class="secondary">Python, Azure OpenAI, LangChain, Unstructured, Qdrant, DSPy, trustCall, Huggingface Transformer Models</div>
+            </div>
+          </div>
+          
+          <div class="skill-row">
+            <div class="skill-name">
+              <div>Agentic AI</div>
+              <div>
+                
+                <span class="skill-level">(Advanced)</span>
+                
+              </div>
+            </div>
+            <div class="skill-value">
+              <div class="secondary">Python, LangGraph, LangSmith, MCP</div>
+            </div>
+          </div>
+          
+          <div class="skill-row">
+            <div class="skill-name">
+              <div>Backend Engineering</div>
+              <div>
+                
+                <span class="skill-level">(Advanced)</span>
+                
+              </div>
+            </div>
+            <div class="skill-value">
+              <div class="secondary">Python, FastAPI, Pydantic, SQLAlchemy, PostgreSQL, Microsoft SQL Server, Valkey, Docker, OAuth 2.0, Azure AD SSO, OpenTelemetry</div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+
+
+
+
+    
+    <div>
+      <div class="section-wrapper">
+        <h2>Projects</h2>
+        <hr />
+        <div class="section-content">
+          
+          <div class="work-item">
+            <div class="work-header">
+
+              <div class="position-title">
+                
+                Gen AI Delta Identification and SOP Generation Workflow Chatbot
+                
+              </div>
+
+
+              <div class="secondary">
+                <div class="date-range">
+                  <div class="date-text">2024-01-01</div> — <div class="date-text">Present</div>
+                </div>
+              </div>
+            </div>
+            <div class="secondary">
+              
+
+              
+              <div class="work-summary">
+                <p><strong>Stack:</strong> Unstructured, Azure OpenAI, LangChain, LangGraph, Qdrant, Valkey, FastAPI, PostgreSQL, Azure AD SSO, AWS Lambda, LangSmith</p>
+              </div>
+              
+
+
+              
+              <ul class="highlights-list">
+                
+                <li>This project aimed to transform a manual, error-prone SOP comparison and update process into an interactive, GenAI-powered chatbot workflow that identifies semantic deltas, incorporates human validation, and generates updated documents end-to-end.</li>
+                
+                <li>Designed and developed a scalable chatbot-based backend architecture using FastAPI, LangChain, and LangGraph to manage multi-step GenAI workflows, used Unstructured for document parsing, Azure OpenAI for high-quality reasoning and generation, Qdrant for semantic retrieval, Valkey for state and session management, and PostgreSQL for persistence, integrated Azure AD SSO for secure access, AWS Lambda for event-driven processing, and LangSmith for tracing, observability, and prompt-level debugging.</li>
+                
+                <li>Enabled automated delta identification, human-in-the-loop validation, and final document generation within a single conversational workflow, significantly reducing manual analysis effort, improving consistency of SOP updates, and accelerating document turnaround time while maintaining user control and auditability.</li>
+                
+              </ul>
+              
+            </div>
+          </div>
+          
+          <div class="work-item">
+            <div class="work-header">
+
+              <div class="position-title">
+                
+                Gen AI Delta Identification Workflow - POC
+                
+              </div>
+
+
+              <div class="secondary">
+                <div class="date-range">
+                  <div class="date-text">2023-12-01</div> — <div class="date-text">2023-12-31</div>
+                </div>
+              </div>
+            </div>
+            <div class="secondary">
+              
+
+              
+              <div class="work-summary">
+                <p><strong>Stack:</strong> Unstructured, Qdrant, LangChain, LangGraph, Ollama, FastAPI</p>
+              </div>
+              
+
+
+              
+              <ul class="highlights-list">
+                
+                <li>This project aimed to validate whether Generative AI could accurately identify semantic deltas between two PDF documents, reducing the manual effort required to compare large SOP-style documents section by section.</li>
+                
+                <li>Built a backend-driven POC using FastAPI to orchestrate document ingestion and comparison, leveraged Unstructured for parsing PDFs, LangChain and LangGraph for workflow orchestration, Qdrant for vector-based semantic comparison, and Ollama for local LLM inference to identify section-wise semantic differences between documents.</li>
+                
+                <li>Successfully demonstrated reliable AI-driven delta identification between two documents, proving feasibility of semantic comparison workflows and providing the technical foundation to scale the solution into a production-grade, human-in-the-loop system.</li>
+                
+              </ul>
+              
+            </div>
+          </div>
+          
+          <div class="work-item">
+            <div class="work-header">
+
+              <div class="position-title">
+                
+                Gen AI EHS&amp;S Incident Reporting Chatbot
+                
+              </div>
+
+
+              <div class="secondary">
+                <div class="date-range">
+                  <div class="date-text">2022-09-01</div> — <div class="date-text">2023-11-30</div>
+                </div>
+              </div>
+            </div>
+            <div class="secondary">
+              
+
+              
+              <div class="work-summary">
+                <p><strong>Stack:</strong> Azure OpenAI, Guardrails AI, LangChain, LangGraph, Qdrant, FastAPI, Pydantic, Azure AD SSO, LangSmith</p>
+              </div>
+              
+
+
+              
+              <ul class="highlights-list">
+                
+                <li>This poc aimed to replace inefficient, error-prone, form-based EHS incident reporting with a GenAI-driven conversational interface to reduce data rework, improve adoption, and lower SaaS licensing costs while scaling access to all employees and contractors.</li>
+                
+                <li>Designed and developed the backend using Azure OpenAI with LangChain and LangGraph to orchestrate conversational workflows, implemented robust Guardrails AI for input/output validation (hallucination, bias, toxicity), Qdrant for vector-based retrieval and validation, and FastAPI with Pydantic for secure, high-performance REST services, integrated Azure AD SSO for authentication, enabled end-to-end observability and tracing with LangSmith, and ensured reliable, scalable record creation through asynchronous API integrations.</li>
+                
+                <li>Achieved target scale of &gt;5000 Good Saves/month, enabled ~70% reduction in license costs, reduced data errors to &lt;5%, and delivered 90% successful API submissions with &lt;2-second response time, significantly improving user experience, data quality, and operational efficiency.</li>
+                
+              </ul>
+              
+            </div>
+          </div>
+          
+          <div class="work-item">
+            <div class="work-header">
+
+              <div class="position-title">
+                
+                Cross-Platform Data Integration Backend
+                
+              </div>
+
+
+              <div class="secondary">
+                <div class="date-range">
+                  <div class="date-text">2021-09-01</div> — <div class="date-text">2022-08-31</div>
+                </div>
+              </div>
+            </div>
+            <div class="secondary">
+              
+
+              
+              <div class="work-summary">
+                <p><strong>Stack:</strong> Python, FastAPI, Pydantic, SQLAlchemy, Microsoft SQL Server, OAuth 2.0, OpenTelemetry, Docker</p>
+              </div>
+              
+
+
+              
+              <ul class="highlights-list">
+                
+                <li>This project aimed to design a secure and scalable backend integration to enable near real-time document synchronization between enterprise systems, eliminating manual retrieval while ensuring reliability, auditability, and regulatory compliance.</li>
+                
+                <li>Designed and developed a REST-based asynchronous backend API using Python and FastAPI, with Pydantic and SQLAlchemy for data validation and persistence on Microsoft SQL Server, implemented OAuth 2.0 for secure authentication, containerized the service using Docker for consistent deployments, and integrated OpenTelemetry to enable distributed tracing, performance monitoring, and observability across high-throughput workflows.</li>
+                
+                <li>Enabled automated synchronization on a scheduled basis, achieved 50 GB data transfer within ~8 minutes during load testing, supported asynchronous file delivery with no size limits, ensured 100% traceability via audit logs and request identifiers, and improved operational reliability through standardized error handling and real-time performance insights.</li>
+                
+              </ul>
+              
+            </div>
+          </div>
+          
+          <div class="work-item">
+            <div class="work-header">
+
+              <div class="position-title">
+                
+                Forms Management API Backend
+                
+              </div>
+
+
+              <div class="secondary">
+                <div class="date-range">
+                  <div class="date-text">2020-08-01</div> — <div class="date-text">2021-08-31</div>
+                </div>
+              </div>
+            </div>
+            <div class="secondary">
+              
+
+              
+              <div class="work-summary">
+                <p><strong>Stack:</strong> Python, FastAPI, Pydantic, SQLAlchemy, PostgreSQL, Azure AD SSO</p>
+              </div>
+              
+
+
+              
+              <ul class="highlights-list">
+                
+                <li>This project aimed to centralize and modernize the management of 10,000+ banking forms by replacing fragmented, manual processes with a secure backend system capable of handling complex metadata, role-based access, and compliance-driven audit requirements.</li>
+                
+                <li>Designed and developed a FastAPI-based backend using Python, with Pydantic for schema validation and SQLAlchemy for ORM-based persistence on PostgreSQL, implemented role-based access control (Admin, Owner, User) with Azure AD SSO, managed dynamic dropdown/master data through database-driven configurations, maintained detailed audit trails for all form lifecycle changes, and instrumented the service with OpenTelemetry for monitoring, tracing, and performance analysis.</li>
+                
+                <li>Enabled scalable management of 10k+ forms with rich metadata and lifecycle tracking, improved governance and compliance through full auditability and role-based controls, reduced operational overhead via centralized master data management, and enhanced system reliability and observability through real-time monitoring and traceability.</li>
                 
               </ul>
               
@@ -605,150 +934,87 @@
     
     <div>
       <div class="section-wrapper">
-        <h2>Projects</h2>
+        <h2>Education</h2>
         <hr />
         <div class="section-content">
           
           <div class="work-item">
             <div class="work-header">
-              <div class="position-title">Pluggable Multimodal RAG for Secure Knowledge Retrieval</div>
+
+              <div class="position-title">
+                
+                <a href="https://silicon.ac.in/" target="_blank">Silicon Institute of Technology</a>
+                
+              </div>
               <div class="secondary">
                 <div class="date-range">
-                  <div class="date-text">2025-02-01</div> — <div class="date-text">Present</div>
+                  <div class="date-text">2016-07-01</div> — <div class="date-text">2020-07-31</div>
                 </div>
               </div>
             </div>
+            <div class="company-name">Bachelor of Technology — Bhubaneswar, Odisha, India</div>
+            
             <div class="secondary">
-              
-              <div class="work-summary">
-                <p>Developed a pluggable Retrieval-Augmented Generation (RAG) framework that avoids costly fine-tuning by leveraging Hugging Face pre-trained models with ChromaDB vector search, laying the foundation for multi-hop reasoning and grounded answers in later phases.</p>
-              </div>
-              
-              
-              <ul class="highlights-list">
-                
-                <li>Implemented document ingestion for structured (.csv, .xls, .json) and unstructured (.txt, .md, .pdf, .docx, .pptx) formats using LangChain loaders, ensuring modular support for future plug-ins.</li>
-                
-                <li>Built preprocessing pipeline with LangChain Text Splitters (Recursive, Character, Markdown, NLTK, spaCy) to dynamically generate high-quality chunks tailored to file types.</li>
-                
-                <li>Integrated Hugging Face Embeddings for vectorization and persisted results in ChromaDB, enabling semantic similarity search as the backbone of the RAG loop.</li>
-                
-                <li>Designed modular ingestion architecture with caching, loaders, splitters, enrichers, and vector store executors, improving maintainability and scalability.</li>
-                
-                <li>Exposed ingestion and retrieval workflows via FastAPI endpoints, routed through an API Gateway with service-specific APIs (SQL metadata API, content API, and GenAI query API).</li>
-                
-                <li>Implemented query handling pipeline: Retriever → PromptTemplate → Hugging Face LLM (ChatHuggingFace) → StrOutputParser, enforcing concise, grounded answers strictly from retrieved context.</li>
-                
-                <li>Improved retrieval reliability and reduced implementation risk by adopting pre-trained Hugging Face models with vector search instead of costly fine-tuning, enabling incremental upgrades in later phases.</li>
-                
-                <li>Established secure, team-specific retrieval boundaries by embedding ownership metadata, preventing cross-team data exposure while improving knowledge accessibility.</li>
-                
-              </ul>
-              
+              <p>Score: 8.61</p>
             </div>
+            
+
+            
+            <div class="secondary">
+              <p>Courses: Data Structure, Algorithm, Machine Learning, Deep Learning, Natural Language Processing</p>
+            </div>
+            
+            <div class="secondary"></div>
           </div>
           
           <div class="work-item">
             <div class="work-header">
-              <div class="position-title">EHS&amp;S Incident Reporting Gen AI Chatbot - MVP 2 - POC</div>
+
+              <div class="position-title">
+                
+                Biswa Bharati +2 Science Residential College
+                
+              </div>
               <div class="secondary">
                 <div class="date-range">
-                  <div class="date-text">2025-02-01</div> — <div class="date-text">Present</div>
+                  <div class="date-text">2013-06-01</div> — <div class="date-text">2015-06-01</div>
                 </div>
               </div>
             </div>
+            <div class="company-name">Higher Secondary — Balasore, Odisha, India</div>
+            
             <div class="secondary">
-              
-              <div class="work-summary">
-                <p>Prototyped the GenAI chatbot enhancement featuring vector similarity search against validated Golden Records database, implementing dynamic clarifying question generation to improve data collection accuracy, and expanding incident classification capabilities to support multiple EHS&amp;S incident types including Good Save and Near Miss reporting scenarios.</p>
-              </div>
-              
-              
-              <ul class="highlights-list">
-                
-                <li>Implemented vector embeddings using ChromaDB vector database to index and retrieve Golden Records, enabling semantic similarity search with sub-second query performance for contextual reference matching during incident reporting.</li>
-                
-                <li>Developed intelligent clarifying question generation system leveraging Langchain&#39;s retrieval-augmented generation (RAG) architecture, dynamically formulating context-specific questions based on similar Golden Records to capture comprehensive incident details and reduce ambiguity in user submissions.</li>
-                
-                <li>Built automated incident classification engine utilizing OpenAI-4o model to accurately categorize incidents across multiple taxonomy levels, distinguishing between Good Save, Near Miss, and other EHS&amp;S event types with high precision.</li>
-                
-                <li>Optimized prompt engineering strategies implementing few-shot learning techniques and structured output templates, enabling context-aware response generation with improved factual accuracy and consistent formatting for downstream system integration.</li>
-                
-              </ul>
-              
+              <p>Score: 75.34%</p>
             </div>
+            
+
+            
+            <div class="secondary"></div>
           </div>
           
           <div class="work-item">
             <div class="work-header">
-              <div class="position-title">EHS&amp;S Incident Reporting Gen AI Chatbot - MVP 1</div>
+
+              <div class="position-title">
+                
+                Sri Aurobindo Centre of Integral High School
+                
+              </div>
               <div class="secondary">
                 <div class="date-range">
-                  <div class="date-text">2024-10-01</div> — <div class="date-text">2025-10-01</div>
+                  <div class="date-text">2003-10-05</div> — <div class="date-text">2013-10-05</div>
                 </div>
               </div>
             </div>
+            <div class="company-name">Secondary — Balasore, Odisha, India</div>
+            
             <div class="secondary">
-              
-              <div class="work-summary">
-                <p>Developed a GenAI-powered chatbot system to replace traditional form-based data entry for Environmental Health, Safety and Sustainability(EHS&amp;S) incident reporting, reducing data collection rework and licensing costs while improving user engagement through conversational AI interface.</p>
-              </div>
-              
-              
-              <ul class="highlights-list">
-                
-                <li>Engineered RESTful API to process free-text user inputs and deliver summarized, structured responses, enhancing data quality and consistency for downstream processing, achieving &lt;2-second response time per API interaction and ensuring real-time user experience.</li>
-                
-                <li>Leveraged Langchain framework to orchestrate OpenAI-4o LLM integration, enabling intelligent context summarization and natural language understanding from unstructured user inputs, supporting &gt;5,000 Good Saves per month adoption rate through improved user accessibility.</li>
-                
-                <li>Implemented Guardrail AI validation pipeline to ensure AI safety through multi-layer content filtering, mitigating risks of hallucinations, bias, and toxic content generation in LLM responses, maintaining &lt;5% data error rate through chatbot-driven validation and quality checks.</li>
-                
-                <li>Developed robust audit system using FastAPI and SQLAlchemy ORM, implementing Pydantic models for type-safe serialization/deserialization of conversation histories, ensuring compliance and traceability requirements while contributing to ~70% reduction in license-related costs by eliminating dependency on traditional form-based systems.</li>
-                
-                <li>Integrated submission API with Internal System to automate Good Save record Draft creation, streamlining SME review and reducing manual data entry overhead, achieving 90% successful API submission rate for seamless data flow to backend systems.</li>
-                
-              </ul>
-              
+              <p>Score: 87.5</p>
             </div>
-          </div>
-          
-          <div class="work-item">
-            <div class="work-header">
-              <div class="position-title">API Development and Integration using FastAPI, SQLAlchemy, and OAuth 2.0</div>
-              <div class="secondary">
-                <div class="date-range">
-                  <div class="date-text">2023-03-01</div> — <div class="date-text">2022-03-01</div>
-                </div>
-              </div>
-            </div>
-            <div class="secondary">
-              
-              <div class="work-summary">
-                <p>Designed and implemented a secure, high-performance REST API using FastAPI for document retrieval and delivery, leveraging SQLAlchemy ORM for database operations, Pydantic for data validation, and OAuth 2.0 for authentication. Deployed the solution on IIS with robust logging and auditing mechanisms.</p>
-              </div>
-              
-              
-              <ul class="highlights-list">
-                
-                <li>Developed REST API endpoints using FastAPI to enable secure and efficient document retrieval and delivery.</li>
-                
-                <li>Implemented OAuth 2.0 authentication with 60-minute token validity for secure API access.</li>
-                
-                <li>Utilized SQLAlchemy ORM for database interactions, improving maintainability, reducing boilerplate SQL, and enabling database-agnostic operations.</li>
-                
-                <li>Applied Pydantic models for request and response validation, ensuring data integrity and type safety.</li>
-                
-                <li>Configured API hosting on IIS for enterprise-grade deployment and scalability.</li>
-                
-                <li>Designed and implemented a structured logging system using Python&#39;s logging module with `TimedRotatingFileHandler`, capturing request/response details, status codes, and error traces for audit and troubleshooting.</li>
-                
-                <li>Created YAML-based logging configuration for modular and maintainable log management, including log rotation and multi-level loggers for API, DB, and utility modules.</li>
-                
-                <li>Implemented error handling and response standardization with appropriate HTTP status codes for robust client-server communication.</li>
-                
-              </ul>
-              
-            </div>
+            
+
+            
+            <div class="secondary"></div>
           </div>
           
         </div>
@@ -756,7 +1022,16 @@
     </div>
     
 
+
     
+
+
+    
+
+
+    
+
+
 
     
 
@@ -775,6 +1050,13 @@
           </div>
           
           <div class="skill-row">
+            <div class="skill-name">Hindi:</div>
+            <div class="skill-value">
+              <div class="secondary">Conversational Proficiency</div>
+            </div>
+          </div>
+          
+          <div class="skill-row">
             <div class="skill-name">Odia:</div>
             <div class="skill-value">
               <div class="secondary">Native speaker</div>
@@ -786,42 +1068,11 @@
     </div>
     
 
-    
-    <div>
-      <div class="section-wrapper">
-        <h2>Skills</h2>
-        <hr />
-        <div class="section-content">
-          
-          <div class="skill-row">
-            <div class="skill-name">Generative AI:</div>
-            <div class="skill-value">
-              <div class="secondary">RAG, LangChain, ChromaDB, FAISS</div>
-            </div>
-          </div>
-          
-          <div class="skill-row">
-            <div class="skill-name">Agentic AI:</div>
-            <div class="skill-value">
-              <div class="secondary">LangGraph, MCP</div>
-            </div>
-          </div>
-          
-          <div class="skill-row">
-            <div class="skill-name">Backend Engineering:</div>
-            <div class="skill-value">
-              <div class="secondary">RESTful API, gRPC, FastAPI, SQLAlchemy, PostgreSQL, Docker</div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-    
 
     
 
     
+
   </div>
 </body>
 

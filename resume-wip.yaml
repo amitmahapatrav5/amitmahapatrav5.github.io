@@ -1,6 +1,5 @@
 basics:
   name: Amit Kumar Mahapatra
-  label: Generative AI Engineer
   image: ""
   email: mahapatraarhas200@gmail.com
   phone: "+91-8114-362199"
@@ -20,20 +19,15 @@ basics:
       username: amitmahapatrav5
       url: https://github.com/amitmahapatrav5
 
-experience: # work -> experience
+experience:
   - name: Tata Consultancy Services
+    organization: TCS
     url: https://www.tcs.com/
     position: IT Analyst
     location: Bhubaneswar, Odisha, India
     startDate: 2020-10-08
     endDate: Present
-    role: Generative AI Engineer
-    highlights:
-      - Gen AI Delta Identification and SOP Generation Workflow Chatbot
-      - Gen AI Delta Identification Workflow - POC
-      - Gen AI EHS&S Incident Reporting Chatbot
-      - Cross-Platform Data Integration Backend
-      - Forms Management API Backend
+    role: Generative AI Backend Engineer
 
 skills:
   - name: Generative AI
@@ -98,6 +92,7 @@ projects:
   #     - ""
   #     - ""
   - name: Gen AI Delta Identification and SOP Generation Workflow Chatbot
+    organization: TCS
     startDate: 2024-01-01
     endDate: ""
     skills:
@@ -119,6 +114,7 @@ projects:
       - "Enabled automated delta identification, human-in-the-loop validation, and final document generation within a single conversational workflow, significantly reducing manual analysis effort, improving consistency of SOP updates, and accelerating document turnaround time while maintaining user control and auditability."
     url: ""
   - name: Gen AI Delta Identification Workflow - POC
+    organization: TCS
     startDate: 2023-12-01
     endDate: 2023-12-31
     skills:
@@ -134,6 +130,7 @@ projects:
       - "Successfully demonstrated reliable AI-driven delta identification between two documents, proving feasibility of semantic comparison workflows and providing the technical foundation to scale the solution into a production-grade, human-in-the-loop system."
     url: ""
   - name: Gen AI EHS&S Incident Reporting Chatbot
+    organization: TCS
     startDate: 2022-09-01
     endDate: 2023-11-30
     skills:
@@ -152,6 +149,7 @@ projects:
       - "Achieved target scale of >5000 Good Saves/month, enabled ~70% reduction in license costs, reduced data errors to <5%, and delivered 90% successful API submissions with <2-second response time, significantly improving user experience, data quality, and operational efficiency."
     url: ""
   - name: Cross-Platform Data Integration Backend
+    organization: TCS
     startDate: 2021-09-01
     endDate: 2022-08-31
     skills:
@@ -169,6 +167,7 @@ projects:
       - "Enabled automated synchronization on a scheduled basis, achieved 50 GB data transfer within ~8 minutes during load testing, supported asynchronous file delivery with no size limits, ensured 100% traceability via audit logs and request identifiers, and improved operational reliability through standardized error handling and real-time performance insights."
     url: ""
   - name: Forms Management API Backend
+    organization: TCS
     startDate: 2020-08-01
     endDate: 2021-08-31
     skills:
@@ -245,6 +244,8 @@ publications:
 languages:
   - language: English
     fluency: Professional Working Proficiency
+  - language: Hindi
+    fluency: Conversational Proficiency
   - language: Odia
     fluency: Native speaker
 

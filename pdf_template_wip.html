@@ -115,7 +115,8 @@
     /* Section Wrapper */
     .section-wrapper {
       max-width: 700px;
-      margin: 0 auto 18px;
+      /* margin: 0 auto 18px; */
+      margin: 18px auto 18px;
     }
 
     .section-wrapper h2 {
@@ -226,49 +227,36 @@
       line-height: 10px;
     }
 
-    /* Skills Section */
-    /* .skill-row {
-      margin-bottom: 5px;
-      display: flex;
-      align-items: baseline;
-    } */
+    .skill-row {
+      margin-bottom: 6px;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      column-gap: 14px;
+      align-items: start;
 
-.skill-row {
-  margin-bottom: 6px;
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  column-gap: 14px;
-  align-items: start;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
 
-  page-break-inside: avoid;
-  break-inside: avoid;
-}
-    /* .skill-name {
+    .skill-name {
       font-weight: 600;
       font-size: 1.4rem;
-    } */
+      white-space: nowrap;
+    }
 
-.skill-name {
-  font-weight: 600;
-  font-size: 1.4rem;
-  white-space: nowrap;
-}
+    .skill-level {
+      font-style: italic;
+      font-weight: normal;
+    }
 
-.skill-level {
-  font-style: italic;
-  font-weight: normal;
-}
+    .skill-name>div+div {
+      margin-top: 5px;
+    }
 
-
-    /* .skill-value {
+    .skill-value {
       font-size: 1.4rem;
-      margin-left: 5px;
-    } */
-
-.skill-value {
-  font-size: 1.4rem;
-  line-height: 1.5rem;
-}
+      line-height: 1.5rem;
+    }
 
     /* References */
     .reference-name {
@@ -281,14 +269,6 @@
       font-size: 1.4rem;
       line-height: 1.5rem;
     }
-
-
-
-
-
-
-
-
 
     /* ============================================
    PAGE BREAK RULES FOR PDF GENERATION
@@ -426,6 +406,7 @@
      SECTION LEVEL CONTROLS
      ========================================== */
 
+      /* Force consistent spacing between all sections in print */
       /* Allow breaks between different sections */
       .section-wrapper+.section-wrapper {
         page-break-before: auto;
@@ -508,32 +489,14 @@
       }
     }
 
-
-
-
-
-
     /* End of Page Break Rules */
   </style>
 
-
-
-
   <div class="resume-container">
+
     <div class="section-wrapper">
       <div class="section-content">
         <div class="header-name">{{ resume.basics.name }}</div>
-
-
-<!-- this one does not look very good -->
-{% if resume.basics.label %}
-<div class="secondary" style="text-align:center;">
-  <p>{{ resume.basics.label }}</p>
-</div>
-{% endif %}
-
-
-
         <div class="secondary">
           <div class="contact-grid">
             {% if resume.basics.location %}
@@ -566,37 +529,48 @@
               </svg>{{ resume.basics.phone }}
             </div>
             {% endif %}
-
-
-{% if resume.basics.url %}
-<div class="contact-item">
-  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
-    width="1em" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83z">
-    </path>
-  </svg>
-  <a target="_blank" href="{{ resume.basics.url }}">{{ resume.basics.url }}</a>
-</div>
-{% endif %}
-
+            {% if resume.basics.url %}
+            <div class="contact-item">
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
+                width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83z">
+                </path>
+              </svg>
+              <a target="_blank" href="{{ resume.basics.url }}">{{ resume.basics.url }}</a>
+            </div>
+            {% endif %}
 
 
             {% for p in resume.basics.profiles %}
             <div class="contact-item">
+              {% if p.network == "GitHub" %}
               <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em"
                 width="1em" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
                 </path>
-              </svg><a href="{{ p.url }}">{{ p.username }}</a>
+              </svg>
+              {% elif p.network == "LinkedIn" %}
+              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em"
+                width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
+                </path>
+              </svg>
+              {% endif %}
+              <a href="{{ p.url }}">{{ p.username }}</a>
             </div>
             {% endfor %}
+
+
+
+
+
           </div>
         </div>
       </div>
     </div>
-
     {% if resume.basics.summary %}
     <div class="section-wrapper">
       <div class="section-content">
@@ -609,62 +583,96 @@
     </div>
     {% endif %}
 
-
-{% if resume.experience %}
-<div>
-  <div class="section-wrapper">
-    <h2>Experience</h2>
-    <hr />
-    <div class="section-content">
-      {% for w in resume.experience %}
-      <div class="work-item">
-        <div class="work-header">
-          <div class="position-title">{{ w.position }}</div>
-          <div class="secondary">
-            <div class="date-range">
-              <div class="date-text">{{ w.startDate }}</div>
-              —
-              <div class="date-text">
-                {% if w.endDate %}{{ w.endDate }}{% else %}Present{% endif %}
+    {% if resume.experience %}
+    <div>
+      <div class="section-wrapper">
+        <h2>Experience</h2>
+        <hr />
+        <div class="section-content">
+          {% for w in resume.experience %}
+          <div class="work-item">
+            <div class="work-header">
+              <div class="position-title">{{ w.position }}</div>
+              <div class="secondary">
+                <div class="date-range">
+                  <div class="date-text">{{ w.startDate }}</div>
+                  —
+                  <div class="date-text">
+                    {% if w.endDate %}{{ w.endDate }}{% else %}Present{% endif %}
+                  </div>
+                </div>
               </div>
             </div>
+
+            <div class="company-name">
+              {% if w.url %}
+              <a href="{{ w.url }}" target="_blank">
+                {{ w.name }}{% if w.location %}, {{ w.location }}{% endif %}
+              </a>
+              {% else %}
+              {{ w.name }}{% if w.location %}, {{ w.location }}{% endif %}
+              {% endif %}
+            </div>
+
+
+            <div class="secondary">
+
+              {% if w.role %}
+              <div class="work-summary">
+                <p>{{ w.role }}</p>
+              </div>
+              {% endif %}
+
+              {% if w.computed_highlights %}
+              <ul class="highlights-list">
+                {% for h in w.computed_highlights %}
+                <li>
+                  {% if h.url %}
+                  <a href="{{ h.url }}" target="_blank">{{ h.name }}</a>
+                  {% else %}
+                  {{ h.name }}
+                  {% endif %}
+                </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+
+
+            </div>
           </div>
-        </div>
-
-<div class="company-name">
-  {% if w.url %}
-    <a href="{{ w.url }}" target="_blank">
-      {{ w.name }}{% if w.location %}, {{ w.location }}{% endif %}
-    </a>
-  {% else %}
-    {{ w.name }}{% if w.location %}, {{ w.location }}{% endif %}
-  {% endif %}
-</div>
-
-
-        <div class="secondary">
-
-{% if w.role %}
-<div class="work-summary">
-  <p>{{ w.role }}</p>
-</div>
-{% endif %}
-
-
-          {% if w.highlights %}
-          <ul class="highlights-list">
-            {% for h in w.highlights %}
-            <li>{{ h }}</li>
-            {% endfor %}
-          </ul>
-          {% endif %}
+          {% endfor %}
         </div>
       </div>
-      {% endfor %}
     </div>
-  </div>
-</div>
-{% endif %}
+    {% endif %}
+
+
+    {% if resume.skills %}
+    <div>
+      <div class="section-wrapper">
+        <h2>Skills</h2>
+        <hr />
+        <div class="section-content">
+          {% for s in resume.skills %}
+          <div class="skill-row">
+            <div class="skill-name">
+              <div>{{ s.name }}</div>
+              <div>
+                {% if s.level %}
+                <span class="skill-level">({{ s.level }})</span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="skill-value">
+              <div class="secondary">{{ s.keywords | join(', ') }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
 
 
 
@@ -677,14 +685,14 @@
           {% for p in resume.projects %}
           <div class="work-item">
             <div class="work-header">
-              
-<div class="position-title">
-  {% if p.url %}
-    <a href="{{ p.url }}" target="_blank">{{ p.name }}</a>
-  {% else %}
-    {{ p.name }}
-  {% endif %}
-</div>
+
+              <div class="position-title">
+                {% if p.url %}
+                <a href="{{ p.url }}" target="_blank">{{ p.name }}</a>
+                {% else %}
+                {{ p.name }}
+                {% endif %}
+              </div>
 
 
               <div class="secondary">
@@ -701,11 +709,11 @@
               </div>
               {% endif %}
 
-{% if p.skills %}
-<div class="work-summary">
-  <p><strong>Stack:</strong> {{ p.skills | join(', ') }}</p>
-</div>
-{% endif %}
+              {% if p.skills %}
+              <div class="work-summary">
+                <p><strong>Stack:</strong> {{ p.skills | join(', ') }}</p>
+              </div>
+              {% endif %}
 
 
               {% if p.highlights %}
@@ -723,7 +731,7 @@
     </div>
     {% endif %}
 
-{% if resume.education %}
+    {% if resume.education %}
     <div>
       <div class="section-wrapper">
         <h2>Education</h2>
@@ -732,16 +740,14 @@
           {% for e in resume.education %}
           <div class="work-item">
             <div class="work-header">
-              
-<div class="position-title">
-  {% if e.url %}
-    <a href="{{ e.url }}" target="_blank">{{ e.institution }}</a>
-  {% else %}
-    {{ e.institution }}
-  {% endif %}
-</div>
 
-              
+              <div class="position-title">
+                {% if e.url %}
+                <a href="{{ e.url }}" target="_blank">{{ e.institution }}</a>
+                {% else %}
+                {{ e.institution }}
+                {% endif %}
+              </div>
               <div class="secondary">
                 <div class="date-range">
                   <div class="date-text">{{ e.startDate }}</div> — <div class="date-text">{{ e.endDate }}</div>
@@ -749,21 +755,17 @@
               </div>
             </div>
             <div class="company-name">{{ e.studyType }} — {{ e.area }}</div>
+            {% if e.score %}
+            <div class="secondary">
+              <p>Score: {{ e.score }}</p>
+            </div>
+            {% endif %}
 
-
-{% if e.score %}
-<div class="secondary">
-  <p>Score: {{ e.score }}</p>
-</div>
-{% endif %}
-
-{% if e.courses %}
-<div class="secondary">
-  <p>Courses: {{ e.courses | join(', ') }}</p>
-</div>
-{% endif %}
-
-
+            {% if e.courses %}
+            <div class="secondary">
+              <p>Courses: {{ e.courses | join(', ') }}</p>
+            </div>
+            {% endif %}
             <div class="secondary"></div>
           </div>
           {% endfor %}
@@ -771,6 +773,121 @@
       </div>
     </div>
     {% endif %}
+
+
+    {% if resume.certificates and resume.certificates | selectattr("name") | list %}
+    <div>
+      <div class="section-wrapper">
+        <h2>Certificates</h2>
+        <hr />
+        <div class="section-content">
+          {% for c in resume.certificates if c.name %}
+          <div class="work-item">
+            <div class="work-header">
+              <div class="position-title">
+                {% if c.url %}
+                <a href="{{ c.url }}" target="_blank">{{ c.name }}</a>
+                {% else %}
+                {{ c.name }}
+                {% endif %}
+              </div>
+              {% if c.date %}
+              <div class="secondary">
+                <div class="date-text">{{ c.date }}</div>
+              </div>
+              {% endif %}
+            </div>
+            {% if c.issuer %}
+            <div class="company-name">{{ c.issuer }}</div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+
+    {% if resume.volunteer and resume.volunteer | selectattr("organization") | list %}
+    <div>
+      <div class="section-wrapper">
+        <h2>Volunteer Experience</h2>
+        <hr />
+        <div class="section-content">
+          {% for v in resume.volunteer if v.organization %}
+          <div class="work-item">
+            <div class="work-header">
+              <div class="position-title">{{ v.position }}</div>
+              <div class="secondary">
+                <div class="date-range">
+                  <div class="date-text">{{ v.startDate }}</div> —
+                  <div class="date-text">
+                    {% if v.endDate %}{{ v.endDate }}{% else %}Present{% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="company-name">
+              {% if v.url %}
+              <a href="{{ v.url }}" target="_blank">{{ v.organization }}</a>
+              {% else %}
+              {{ v.organization }}
+              {% endif %}
+            </div>
+
+            {% if v.summary %}
+            <div class="secondary">
+              <p>{{ v.summary }}</p>
+            </div>
+            {% endif %}
+
+            {% if v.highlights %}
+            <ul class="highlights-list">
+              {% for h in v.highlights %}
+              <li>{{ h }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+
+    {% if resume.publications and resume.publications | selectattr("name") | list %}
+    <div>
+      <div class="section-wrapper">
+        <h2>Publications</h2>
+        <hr />
+        <div class="section-content">
+          {% for p in resume.publications if p.name %}
+          <div class="work-item">
+            <div class="position-title">
+              {% if p.url %}
+              <a href="{{ p.url }}" target="_blank">{{ p.name }}</a>
+              {% else %}
+              {{ p.name }}
+              {% endif %}
+            </div>
+            {% if p.publisher %}
+            <div class="company-name">{{ p.publisher }}</div>
+            {% endif %}
+            {% if p.summary %}
+            <div class="secondary">
+              <p>{{ p.summary }}</p>
+            </div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+
 
     {% if resume.awards and resume.awards[0].title %}
     <div>
@@ -822,36 +939,6 @@
     </div>
     {% endif %}
 
-    {% if resume.skills %}
-    <div>
-      <div class="section-wrapper">
-        <h2>Skills</h2>
-        <hr />
-        <div class="section-content">
-          {% for s in resume.skills %}
-          <div class="skill-row">
-            
-
-
-<div class="skill-name">
-  <div>{{ s.name }}</div>
-  <div>
-    {% if s.level %} 
-      <span class="skill-level">({{ s.level }})</span>
-    {% endif %}</div>
-</div>
-<div class="skill-value">
-  <div class="secondary">{{ s.keywords | join(', ') }}</div>
-</div>
-
-
-
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-    {% endif %}
 
     {% if resume.interests and resume.interests[0].name %}
     <div>
@@ -859,7 +946,7 @@
         <h2>Interests</h2>
         <hr />
         <div class="section-content">
-          {% for i in interests %}
+          {% for i in resume.interests %}
           {% if i.name %}
           <div class="skill-row">
             <div class="skill-name">{{ i.name }}:</div>
@@ -880,7 +967,7 @@
         <h2>References</h2>
         <hr />
         <div class="section-content">
-          {% for r in references %}
+          {% for r in resume.references %}
           {% if r.name %}
           <div style="margin-bottom:15px">
             <div class="reference-name">{{ r.name }}</div>
@@ -892,6 +979,7 @@
       </div>
     </div>
     {% endif %}
+
   </div>
 </body>
 
