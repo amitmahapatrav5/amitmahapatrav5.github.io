@@ -144,7 +144,7 @@ projects:
       - Azure AD SSO
       - LangSmith
     highlights:
-      - "This poc aimed to replace inefficient, error-prone, form-based EHS incident reporting with a GenAI-driven conversational interface to reduce data rework, improve adoption, and lower SaaS licensing costs while scaling access to all employees and contractors."
+      - "This project aimed to replace inefficient, error-prone, form-based EHS incident reporting with a GenAI-driven conversational interface to reduce data rework, improve adoption, and lower SaaS licensing costs while scaling access to all employees and contractors."
       - "Designed and developed the backend using Azure OpenAI with LangChain and LangGraph to orchestrate conversational workflows, implemented robust Guardrails AI for input/output validation (hallucination, bias, toxicity), Qdrant for vector-based retrieval and validation, and FastAPI with Pydantic for secure, high-performance REST services, integrated Azure AD SSO for authentication, enabled end-to-end observability and tracing with LangSmith, and ensured reliable, scalable record creation through asynchronous API integrations."
       - "Achieved target scale of >5000 Good Saves/month, enabled ~70% reduction in license costs, reduced data errors to <5%, and delivered 90% successful API submissions with <2-second response time, significantly improving user experience, data quality, and operational efficiency."
     url: ""
