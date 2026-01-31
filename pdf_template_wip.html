@@ -493,7 +493,6 @@
   </style>
 
   <div class="resume-container">
-
     <div class="section-wrapper">
       <div class="section-content">
         <div class="header-name">{{ resume.basics.name }}</div>
@@ -540,8 +539,6 @@
               <a target="_blank" href="{{ resume.basics.url }}">{{ resume.basics.url }}</a>
             </div>
             {% endif %}
-
-
             {% for p in resume.basics.profiles %}
             <div class="contact-item">
               {% if p.network == "GitHub" %}
@@ -562,16 +559,11 @@
               <a href="{{ p.url }}">{{ p.username }}</a>
             </div>
             {% endfor %}
-
-
-
-
-
           </div>
         </div>
       </div>
     </div>
-    {% if resume.basics.summary %}
+    <!-- {% if resume.basics.summary %}
     <div class="section-wrapper">
       <div class="section-content">
         <div class="secondary">
@@ -581,8 +573,7 @@
         </div>
       </div>
     </div>
-    {% endif %}
-
+    {% endif %} -->
     {% if resume.experience %}
     <div>
       <div class="section-wrapper">
@@ -603,7 +594,6 @@
                 </div>
               </div>
             </div>
-
             <div class="company-name">
               {% if w.url %}
               <a href="{{ w.url }}" target="_blank">
@@ -613,16 +603,12 @@
               {{ w.name }}{% if w.location %}, {{ w.location }}{% endif %}
               {% endif %}
             </div>
-
-
             <div class="secondary">
-
               {% if w.role %}
               <div class="work-summary">
                 <p>{{ w.role }}</p>
               </div>
               {% endif %}
-
               {% if w.computed_highlights %}
               <ul class="highlights-list">
                 {% for h in w.computed_highlights %}
@@ -636,8 +622,6 @@
                 {% endfor %}
               </ul>
               {% endif %}
-
-
             </div>
           </div>
           {% endfor %}
@@ -645,8 +629,6 @@
       </div>
     </div>
     {% endif %}
-
-
     {% if resume.skills %}
     <div>
       <div class="section-wrapper">
@@ -672,10 +654,6 @@
       </div>
     </div>
     {% endif %}
-
-
-
-
     {% if resume.projects %}
     <div>
       <div class="section-wrapper">
@@ -693,8 +671,6 @@
                 {{ p.name }}
                 {% endif %}
               </div>
-
-
               <div class="secondary">
                 <div class="date-range">
                   <div class="date-text">{{ p.startDate }}</div> — <div class="date-text">{% if p.endDate %}{{ p.endDate
@@ -708,14 +684,11 @@
                 <p>{{ p.description }}</p>
               </div>
               {% endif %}
-
               {% if p.skills %}
               <div class="work-summary">
                 <p><strong>Stack:</strong> {{ p.skills | join(', ') }}</p>
               </div>
               {% endif %}
-
-
               {% if p.highlights %}
               <ul class="highlights-list">
                 {% for h in p.highlights %}
@@ -730,7 +703,6 @@
       </div>
     </div>
     {% endif %}
-
     {% if resume.education %}
     <div>
       <div class="section-wrapper">
@@ -773,8 +745,6 @@
       </div>
     </div>
     {% endif %}
-
-
     {% if resume.certificates and resume.certificates | selectattr("name") | list %}
     <div>
       <div class="section-wrapper">
@@ -806,8 +776,6 @@
       </div>
     </div>
     {% endif %}
-
-
     {% if resume.volunteer and resume.volunteer | selectattr("organization") | list %}
     <div>
       <div class="section-wrapper">
@@ -827,7 +795,6 @@
                 </div>
               </div>
             </div>
-
             <div class="company-name">
               {% if v.url %}
               <a href="{{ v.url }}" target="_blank">{{ v.organization }}</a>
@@ -835,13 +802,11 @@
               {{ v.organization }}
               {% endif %}
             </div>
-
             {% if v.summary %}
             <div class="secondary">
               <p>{{ v.summary }}</p>
             </div>
             {% endif %}
-
             {% if v.highlights %}
             <ul class="highlights-list">
               {% for h in v.highlights %}
@@ -855,8 +820,6 @@
       </div>
     </div>
     {% endif %}
-
-
     {% if resume.publications and resume.publications | selectattr("name") | list %}
     <div>
       <div class="section-wrapper">
@@ -886,9 +849,6 @@
       </div>
     </div>
     {% endif %}
-
-
-
     {% if resume.awards and resume.awards[0].title %}
     <div>
       <div class="section-wrapper">
@@ -919,7 +879,6 @@
       </div>
     </div>
     {% endif %}
-
     {% if resume.languages %}
     <div>
       <div class="section-wrapper">
@@ -938,8 +897,6 @@
       </div>
     </div>
     {% endif %}
-
-
     {% if resume.interests and resume.interests[0].name %}
     <div>
       <div class="section-wrapper">
@@ -960,7 +917,6 @@
       </div>
     </div>
     {% endif %}
-
     {% if resume.references and resume.references[0].name %}
     <div>
       <div class="section-wrapper">
@@ -979,7 +935,6 @@
       </div>
     </div>
     {% endif %}
-
   </div>
 </body>
 
