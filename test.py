@@ -50,10 +50,6 @@ def render(json_file: Path, template_file: Path, output_file: Path):
 if __name__ == "__main__":
     json_file = Path().cwd() / 'resume-wip.yaml'
 
-    html_template_file = Path().cwd() / 'html_template.html'
-    html_output_file = Path().cwd() / 'index.html'
-    render(json_file, html_template_file, html_output_file)
-
     pdf_template_file = Path().cwd() / 'pdf_template_wip.html'
     pdf_output_file = Path().cwd() / 'resume.pdf.html'
     render(json_file, pdf_template_file, pdf_output_file)
